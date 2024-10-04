@@ -2,7 +2,14 @@
 
 import { asyncWithLDProvider } from "launchdarkly-react-client-sdk";
 import { use } from "react";
-import { isAndroid, isIOS, isBrowser, isMobile, isMacOs, isWindows } from 'react-device-detect';
+import {
+  isAndroid,
+  isIOS,
+  isBrowser,
+  isMobile,
+  isMacOs,
+  isWindows,
+} from "react-device-detect";
 import { v4 as uuidv4 } from "uuid";
 
 export default function AsyncLDProvider({
@@ -10,19 +17,22 @@ export default function AsyncLDProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const operatingSystem = isAndroid ? 'Android' : isIOS ? 'iOS' : isWindows ? 'Windows' : isMacOs ? 'macOS' : '';
-  const device = isMobile ? 'Mobile' : isBrowser ? 'Desktop' : '';
+  const operatingSystem = isAndroid
+    ? "Android"
+    : isIOS
+    ? "iOS"
+    : isWindows
+    ? "Windows"
+    : isMacOs
+    ? "macOS"
+    : "";
+  const device = isMobile ? "Mobile" : isBrowser ? "Desktop" : "";
 
   const LDDynaProvider = use(
     asyncWithLDProvider({
-      clientSideID: process.env.NEXT_PUBLIC_LD_CLIENT_KEY || '',
+      clientSideID: process.env.NEXT_PUBLIC_LD_CLIENT_KEY || "",
       reactOptions: {
-        useCamelCaseFlagKeys: false
-      },
-      options: {
-        streamUrl: 'https://stream-stg.launchdarkly.com',
-        baseUrl: 'https://sdk-stg.launchdarkly.com',
-        eventsUrl: 'https://events-stg.launchdarkly.com',
+        useCamelCaseFlagKeys: false,
       },
       context: {
         kind: "multi",
@@ -51,7 +61,9 @@ export default function AsyncLDProvider({
         },
         audience: {
           key: uuidv4().slice(0, 6),
-        }}})
+        },
+      },
+    })
   );
 
   return <LDDynaProvider>{children}</LDDynaProvider>;
