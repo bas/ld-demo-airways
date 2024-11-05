@@ -157,7 +157,7 @@ export const fetchAirportsFromFastCache = async () => {
 
       span.addEvent("Done sleeping", { sleepTime: randomSleep });
 
-      const randomError = Math.random() > 0.8;
+      const randomError = Math.random() > 0.8; // by increaseing the value here, you decrease the chance of an error; currently set to 20%
       if (randomError) {
         throw new Error("Something went terribly wrong with the fast cache");
       }
