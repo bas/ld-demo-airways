@@ -1,7 +1,20 @@
-# Steps to make this work:
+# Steps to make this work
 
-# Provisioning
-1. @bas will do this by the end of *this* week (or next)
+## Provisioning
+
+### Provision the project
+
+1. Clone this repository to your local machine
+2. Make sure you have an [Access Token](https://docs.launchdarkly.com/home/account/api-create) with Write permission
+3. Make sure you have [Terraform CLI](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) installed
+4. In the repository navigate to the `terraform` folder
+5. Run `terraform apply` and provide the requested access token and a project name. As a project name use for example `<username>-demo-airways`
+6. Check if your project exists in LaunchDarkly
+
+### Update environment settings
+
+1. In your local repository create a `.env.local` from the `.env.example`
+2. Add the SDK client and server keys from your project, your project and the environemnt you connect to
 
 ## Implementation
 1. Configure the LD SDK to decorate OTEL span events (hook - see `./utils/ld-server/serverClient.ts` for example)
