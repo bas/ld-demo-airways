@@ -1,5 +1,9 @@
 # Steps to make this work
 
+## Introduction
+
+This demo is an adapation of the Launch Airways demo allowing you to demo the OpenTelemetry integration. 
+
 ## Provisioning
 
 ### Provision the project
