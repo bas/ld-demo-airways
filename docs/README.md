@@ -19,7 +19,7 @@ This demo is an adapation of the Launch Airways demo allowing you to demo the Op
 ### Update environment settings
 
 1. In your local repository create a `.env.local` from the `.env.example`
-2. Add the SDK client and server keys from your project, your project and the environemnt you connect to
+2. Add the SDK client and server keys from your project, your project and the environment you will connect to
 3. Use the Redis and Database url's from [Release Guardian Demo - Launch Airways](https://launchdarkly.atlassian.net/wiki/spaces/LaunchX/pages/2835218907/Release+Guardian+Demo+-+Launch+Airways)
 
 ## Implementation
