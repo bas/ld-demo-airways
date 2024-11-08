@@ -9,11 +9,12 @@ This demo is an adapation of the Launch Airways demo allowing you to demo the Op
 ### Provision the project
 
 1. Clone this repository to your local machine
-2. Make sure you have an [Access Token](https://docs.launchdarkly.com/home/account/api-create) with Write permission
-3. Make sure you have [Terraform CLI](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) installed
-4. In the repository navigate to the `terraform` folder
-5. Run `terraform apply` and provide the requested access token and a project name. As a project name use for example `<username>-demo-airways`
-6. Check if your project exists in LaunchDarkly
+2. Checkout the branch `hbarrow/otel-demo`: `git checkout -b hbarrow/otel-demo origin/hbarrow/otel-demo`
+3. Make sure you have an [Access Token](https://docs.launchdarkly.com/home/account/api-create) with Write permission
+4. Make sure you have [Terraform CLI](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) installed
+5. In the repository navigate to the `terraform` folder
+6. Run `terraform apply` and provide the requested access token and a project name. As a project name use for example `<username>-demo-airways`
+7. Check if your project exists in LaunchDarkly
 
 ### Update environment settings
 
