@@ -22,11 +22,6 @@ This demo is an adapation of the Launch Airways demo allowing you to demo the Op
 2. Add the SDK client and server keys from your project, your project and the environment you will connect to
 3. Use the Redis and Database url's from [Release Guardian Demo - Launch Airways](https://launchdarkly.atlassian.net/wiki/spaces/LaunchX/pages/2835218907/Release+Guardian+Demo+-+Launch+Airways)
 
-## Implementation
-1. Configure the LD SDK to decorate OTEL span events (hook - see `./utils/ld-server/serverClient.ts` for example)
-2. Configure the exporter in Open Telemetry to filter out events that should are not flag evaluations (done in `otel-collector-config.yaml`. docs on how to set up OTel to send traces to LD: https://docs.launchdarkly.com/sdk/features/opentelemetry)
-3. Create metrics in LD that will represent ^^ traces/span events (instructions on metric definition: https://docs.launchdarkly.com/integrations/opentelemetry#create-launchdarkly-metrics-from-opentelemetry-trace-data)
-
 ## Run the demo
 1. Start the Open Telemetry collector
    1. Start Docker daemon
@@ -40,3 +35,11 @@ This demo is an adapation of the Launch Airways demo allowing you to demo the Op
    1. Target friends & family segment, select 5xx error & latency as metrics
 5. Run the simulateTraffic.sh from the terminal (`./simulateTraffic.sh`)
 6. Monitor the Guarded Rollout results until the regression is detected
+
+## Implementation
+
+This is just an explination to how OTEL is configured.
+
+1. Configure the LD SDK to decorate OTEL span events (hook - see `./utils/ld-server/serverClient.ts` for example)
+2. Configure the exporter in Open Telemetry to filter out events that should are not flag evaluations (done in `otel-collector-config.yaml`. docs on how to set up OTel to send traces to LD: https://docs.launchdarkly.com/sdk/features/opentelemetry)
+3. Create metrics in LD that will represent ^^ traces/span events (instructions on metric definition: https://docs.launchdarkly.com/integrations/opentelemetry#create-launchdarkly-metrics-from-opentelemetry-trace-data)
