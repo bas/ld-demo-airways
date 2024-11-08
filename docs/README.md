@@ -38,7 +38,7 @@ This demo is an adapation of the Launch Airways demo allowing you to demo the Op
 
 ## Implementation
 
-This is just an explination to how OTEL is configured.
+This is just an explenation to how OTEL is configured.
 
 1. Configure the LD SDK to decorate OTEL span events (hook - see `./utils/ld-server/serverClient.ts` for example)
 2. Configure the exporter in Open Telemetry to filter out events that should are not flag evaluations (done in `otel-collector-config.yaml`. docs on how to set up OTel to send traces to LD: https://docs.launchdarkly.com/sdk/features/opentelemetry)
